@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="base.css" />
+    <title>Toggle Image</title>
+  </head>
+
+  <body>
+    <header>
+      <div id="logo">
+        <img src="bikeLogo.jpg" alt="logo" />
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Bienvenue sur mon site !</h1>
+
+      <img id="monImage" src="bellecour_avant.png" />
+
+      <p></p>
+    </div>
+  </body>
+  <script>
+    const monImage = document.querySelector(".container img");
+    console.log(monImage);
+
+    monImage.addEventListener("click", toggleImage);
+
+    function toggleImage() {
+		//IF ELSE
+      //   if (monImage.src.endsWith("bellecour_avant.png")) {
+      //     monImage.src = "bellecour_maintenant.png";
+      //   } else {
+      //     monImage.src = "bellecour_avant.png";
+      //   }
+
+	  //TERNAIRE
+      monImage.src = monImage.src.endsWith("bellecour_avant.png")
+        ? "bellecour_maintenant.png"
+        : "bellecour_avant.png";
+    }
+  </script>
+</html>

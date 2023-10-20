@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enonce 3</title>
+  </head>
+  <body>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: bisque;
+      }
+      button {
+        margin: auto;
+      }
+      .box {
+        background-color: aliceblue;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 5px 5px grey;
+        margin: auto;
+      }
+      #compteur {
+        font-size: 50px;
+      }
+    </style>
+    <div class="box">
+      <button id="demarrer">demarrer</button>
+      <button id="recommencer">recommencer</button>
+      <p>compteur:</p>
+      <span id="compteur"></span>
+    </div>
+    <script>
+      //DOM
+      const start = document.querySelector("#demarrer");
+      const restart = document.querySelector("#recommencer");
+      const compteur = document.querySelector("#compteur");
+      let compteurValeur = 0;
+      let temps;
+
+      //Events
+      start.addEventListener("click", function () {
+        // Commencez à compter
+        if (!temps) {
+          temps = setInterval(function () {
+            compteurValeur++;
+            compteur.textContent = `${compteurValeur}s`;
+          }, 1000); // seconde par seconde
+        }
+      });
+
+      restart.addEventListener("click", function () {
+        // Remet le compteur à zéro
+        compteurValeur = 0;
+        compteur.textContent = compteurValeur;
+      });
+    </script>
+  </body>
+</html>

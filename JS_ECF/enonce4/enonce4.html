@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enoncé 4</title>
+  </head>
+  <body>
+    <script>
+      //phrase
+      const phrase = "Qu'est-ce qui est super chouette ? c'est JS";
+
+      //regex recherche "JS"
+      regex = /JS/;
+      console.log(regex.test(phrase));
+
+      //fonction pour remplacer
+      function remplace(phrase) {
+        if (regex.test(phrase)) {
+          let result = phrase.replace(regex, "Javascript");
+          console.log(result);
+        }
+      }
+      //appel fonction
+      remplace(phrase);
+    </script>
+  </body>
+</html>

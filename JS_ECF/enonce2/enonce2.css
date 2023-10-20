@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: bisque;
+}
+.questions {
+  font-weight: bold;
+  border: 1px solid black;
+  margin: 10px auto;
+  text-align: center;
+  background-color: aliceblue;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 5px 5px grey;
+}
+
+.reponses {
+  display: none;
+}
+.aff {
+  border: 1px solid black;
+  background-color: white;
+  margin: 5px auto;
+  padding: 15px;
+  text-align: center;
+  font-style: italic;
+}

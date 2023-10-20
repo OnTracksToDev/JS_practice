@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enoncé 1</title>
+  </head>
+  <body>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: bisque;
+      }
+      .box {
+        background-color: aliceblue;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 5px 5px grey;
+      }
+    </style>
+    <div class="box">
+      <h1>Titre Enoncé 1</h1>
+      <button id="agrandir">Agrandir le texte</button>
+      <button id="reduire">Reduire le texte</button>
+    </div>
+    <script>
+      //selection DOM
+      const titre = document.querySelector("h1");
+      console.log(titre.style.fontSize);
+      const agrandir = document.querySelector("#agrandir");
+      console.log(agrandir);
+      const reduire = document.querySelector("#reduire");
+      console.log(reduire);
+
+      // recherche taille actuelle titre
+      console.log(window.getComputedStyle(titre).fontSize);
+
+      //fonctions
+      function augmenter() {
+        const tailleActuelle = parseInt(getComputedStyle(titre).fontSize); //reslutat Integer
+        console.log(tailleActuelle);
+        //verifie et agi sur la taille
+        if (tailleActuelle < 40) {
+          titre.style.fontSize = `${tailleActuelle + 2}px`;
+        }
+      }
+
+      function diminuer() {
+        const tailleActuelle = parseInt(getComputedStyle(titre).fontSize);
+        console.log(tailleActuelle);
+        //verifie et agi sur la taille
+        if (tailleActuelle > 10) {
+          titre.style.fontSize = `${tailleActuelle - 2}px`;
+        }
+      }
+      //events
+      agrandir.addEventListener("click", augmenter);
+      reduire.addEventListener("click", diminuer);
+    </script>
+  </body>
+</html>
